@@ -30,8 +30,23 @@ export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?:
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    // Validate Phone Number (10 digits only)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!formData.phone.match(phoneRegex)) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    // Send email in background
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    }).catch((err) => console.error("Failed to send email lead", err));
+
     const whatsappText = encodeURIComponent(
       `*Quick Booking Lead*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service}\nCity: ${formData.city}`
     );
@@ -65,7 +80,7 @@ export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?:
               Best Home Appliance <span className="text-accent">Repair Service</span> at Your Doorstep
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
-              AC, Washing Machine, TV, Microwave — get expert repair for all your home appliances. Certified technicians, same-day service, and transparent pricing in Delhi, Noida, Gurgaon & all major cities.
+              AC, Fridge, Washing Machine, TV, Microwave — get expert repair for all your home appliances. Certified technicians, same-day service, and transparent pricing in Delhi, Noida, Gurgaon, Ghaziabad & all major cities.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a href={`tel:${PHONE_NUMBER}`}>
@@ -73,9 +88,15 @@ export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?:
                   <Phone className="h-5 w-5" /> Call Now - Free Estimate
                 </Button>
               </a>
-              <Button size="lg" variant="outline" className="gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold">
-                Book on WhatsApp
-              </Button>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20want%20to%20book%20an%20appliance%20repair%20service`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="outline" className="gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold">
+                  <Send className="h-5 w-5" /> Book on WhatsApp
+                </Button>
+              </a>
             </div>
           </div>
 

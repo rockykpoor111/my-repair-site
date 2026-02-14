@@ -52,7 +52,7 @@ const heroData = {
     "Fast, reliable TV repair by certified technicians. Same-day service for all brands — LED, LCD, OLED, and Smart TVs.",
   heroImage: "/images/tv.jpeg",
   heroImageAlt: "Professional technician repairing a flat screen TV",
-  whatsappPreText: "Hi%2C%20I%20need%20TV%20repair%20service.%20Please%20share%20details.",
+  whatsappPreText: "Hi, I need TV repair service. Please share details.",
   features: [
     { icon: "Clock", label: "Same Day Service" },
     { icon: "Shield", label: "90-Day Warranty" },

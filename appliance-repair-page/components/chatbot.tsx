@@ -98,6 +98,19 @@ export function Chatbot({ defaultService = "General Inquiry" }: { defaultService
                   const serviceName = defaultService === "General Inquiry" ? "Home Appliance Repair" : defaultService;
                   const preText = `Hi, I need ${serviceName} service. Please share details.`;
 
+                  // Send email in background (fire and forget)
+                  fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      name: cleanName,
+                      phone: cleanDigits,
+                      service: serviceName,
+                      issue: cleanIssue,
+                      type: "Chatbot Lead"
+                    }),
+                  }).catch((err) => console.error("Failed to send chatbot email lead", err));
+
                   const waMessage = `*${preText}* %0a%0a` +
                     `*Name:* ${cleanName} %0a` +
                     `*Phone:* ${cleanDigits} %0a` +

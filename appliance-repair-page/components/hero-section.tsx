@@ -26,7 +26,7 @@ const defaultHero: HeroData = {
   description: "Fast, reliable, and affordable AC repair by certified technicians. Same-day service for all brands.",
   heroImage: "/images/ac.jpeg",
   heroImageAlt: "Professional AC repair technician",
-  whatsappPreText: "Hi%2C%20I%20need%20AC%20repair%20service.",
+  whatsappPreText: "Hi, I need AC repair service.",
   features: [
     { icon: Clock, label: "Same Day Service" },
     { icon: Shield, label: "90-Day Warranty" },
@@ -41,13 +41,29 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    city: "",
     issue: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const preText = decodeURIComponent(d.whatsappPreText).replace(/\./g, ""); // Remove trailing dot if any
-    const message = `*${preText}*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nIssue: ${formData.issue || "General Service"}\nType: ${type}`;
+
+    // Validate Phone Number (10 digits only)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    const preText = d.whatsappPreText.replace(/\./g, ""); // Remove trailing dot if any
+    const message = `*${preText}*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nCity: ${formData.city}\nIssue: ${formData.issue || "General Service"}\nType: ${type}`;
+
+    // Send email in background (fire and forget)
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, type }),
+    }).catch((err) => console.error("Failed to send email lead", err));
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, "_blank");
@@ -96,6 +112,16 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
                   <Phone className="h-5 w-5" /> Call Now
                 </Button>
               </a>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(d.whatsappPreText || `Hi, I need ${type || "appliance"} repair service.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 sm:flex-none"
+              >
+                <Button size="lg" variant="outline" className="w-full gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold">
+                  <Send className="h-5 w-5" /> Book on WhatsApp
+                </Button>
+              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-primary-foreground/70">
@@ -128,6 +154,24 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
+
+              <select
+                className="w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:ring-2 focus:ring-accent outline-none"
+                required
+                value={formData.city}
+                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+              >
+                <option value="">Select City</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Noida">Noida</option>
+                <option value="Gurgaon">Gurgaon</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Faridabad">Faridabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Other">Other City</option>
+              </select>
 
               <select
                 className="w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:ring-2 focus:ring-accent outline-none"

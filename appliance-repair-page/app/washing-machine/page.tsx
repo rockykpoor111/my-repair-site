@@ -50,7 +50,7 @@ const heroData = {
     "Fast, reliable washing machine repair by certified technicians. Same-day service for all brands — Front Load, Top Load, and Semi-Automatic machines.",
   heroImage: "/images/washing.jpeg",
   heroImageAlt: "Professional technician repairing a washing machine",
-  whatsappPreText: "Hi%2C%20I%20need%20washing%20machine%20repair%20service.%20Please%20share%20details.",
+  whatsappPreText: "Hi, I need washing machine repair service. Please share details.",
   features: [
     { icon: "Clock", label: "Same Day Service" },
     { icon: "Shield", label: "90-Day Warranty" },
