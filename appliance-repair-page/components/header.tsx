@@ -50,7 +50,7 @@ export function Header() {
             </Button>
           </a>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20need%20AC%20repair%20service`}
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20need%20appliance%20repair%20service`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -94,7 +94,7 @@ export function Header() {
               </Button>
             </a>
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20need%20AC%20repair%20service`}
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20need%20appliance%20repair%20service`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1"
