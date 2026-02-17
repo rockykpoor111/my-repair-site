@@ -16,6 +16,26 @@ export default function Footer() {
             </p>
           </div>
           <div>
+            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li>
+                <Link href="/service-areas" className="hover:text-white transition-colors">
+                  Service Areas
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <a href="tel:+918076418358" className="hover:text-white transition-colors">
+                  Call Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-center gap-2">

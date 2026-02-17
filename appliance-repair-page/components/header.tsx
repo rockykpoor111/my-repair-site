@@ -16,7 +16,7 @@ const navLinks = [
   { href: "/ac-repair", label: "AC Repair" },
   { href: "/microwave-repair", label: "Microwave" },
   { href: "/fridge-repair", label: "Fridge Repair" },
-  { href: "#contact", label: "Contact" },
+  { href: "tel:+918076418358", label: "Call Now" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -32,13 +32,23 @@ export function Header() {
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-md px-2 py-2 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground hover:bg-muted"
-            >
-              {link.label}
-            </Link>
+            link.href.startsWith("tel:") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-md px-2 py-2 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground hover:bg-muted"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-md px-2 py-2 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground hover:bg-muted"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -76,14 +86,25 @@ export function Header() {
         <div className="border-t border-border bg-card px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
-              >
-                {link.label}
-              </Link>
+              link.href.startsWith("tel:") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
           </nav>
           <div className="mt-4 flex gap-3">

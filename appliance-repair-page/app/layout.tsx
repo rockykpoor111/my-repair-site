@@ -12,38 +12,46 @@ const _spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "AppliancesPro - Best Home Appliance Repair in Delhi | AC, Washing Machine, TV, Microwave",
-    template: "%s | AppliancesPro",
+    default: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR | Call 8076418358",
+    template: "%s | Appliances Pro",
   },
   description:
-    "Best home appliance repair service in Delhi NCR. Expert AC repair, washing machine repair, TV repair & microwave repair. Certified technicians, same-day service, 90-day warranty.",
+    "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad. We offer same-day doorstep service, affordable rates, and warranty. Call 8076418358 for instant booking.",
   keywords: [
-    "best home appliance repair in Delhi",
-    "appliance repair near me",
-    "AC repair Delhi",
-    "washing machine repair",
-    "TV repair service",
-    "microwave repair",
-    "fridge repair Delhi",
-    "home appliance service",
-    "AppliancesPro",
-    "same day appliance repair",
-    "affordable repair service Delhi NCR",
+    "AC repair near me",
+    "AC service Noida",
+    "Split AC installation Delhi",
+    "Window AC repair Gurgaon",
+    "Fridge repair mechanic",
+    "Refrigerator gas filling Ghaziabad",
+    "Washing machine repair Faridabad",
+    "Fully automatic washing machine service",
+    "Microwave oven repair near me",
+    "LED TV repair Delhi NCR",
+    "Samsung AC repair",
+    "LG fridge repair",
+    "Whirlpool washing machine service",
+    "Daikin AC service",
+    "IFB microwave repair",
+    "Appliances Pro",
+    "home appliance mechanic",
+    "doorstep repair service",
+    "urgent AC repair",
+    "cheap appliance repair Delhi",
   ],
   openGraph: {
-    title: "AppliancesPro - Best Home Appliance Repair in Delhi",
+    title: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR",
     description:
-      "Expert repair for AC, Washing Machine, TV, Microwave & more. Same-day service in Delhi NCR.",
+      "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
     type: "website",
     locale: "en_IN",
-    siteName: "AppliancesPro",
+    siteName: "Appliances Pro",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AppliancesPro - Best Home Appliance Repair in Delhi",
+    title: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR",
     description:
-      "Expert repair for AC, Washing Machine, TV, Microwave & more. Same-day service in Delhi NCR.",
+      "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
   },
   robots: {
     index: true,
@@ -79,14 +87,23 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "AppliancesPro AC Repair",
+              name: "Appliances Pro",
               description:
-                "Professional AC repair, installation and maintenance services",
-              telephone: "+91-9876543210",
+                "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi NCR.",
+              telephone: "8076418358",
+              areaServed: [
+                "Delhi",
+                "New Delhi",
+                "Noida",
+                "Greater Noida",
+                "Gurugram",
+                "Ghaziabad",
+                "Faridabad"
+              ],
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Your City",
-                addressRegion: "Your State",
+                addressLocality: "Delhi",
+                addressRegion: "Delhi",
                 addressCountry: "IN",
               },
               openingHours: "Mo-Su 08:00-22:00",
@@ -98,27 +115,41 @@ export default function RootLayout({
               },
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
-                name: "AC Services",
+                name: "Home Appliance Repair Services",
                 itemListElement: [
                   {
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "AC Repair",
+                      name: "AC Repair & Service",
                     },
                   },
                   {
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "AC Installation",
+                      name: "Fridge (Refrigerator) Repair",
                     },
                   },
                   {
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "AC Gas Refill",
+                      name: "Washing Machine Repair",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Microwave Oven Repair",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "LED TV Repair",
                     },
                   },
                 ],
