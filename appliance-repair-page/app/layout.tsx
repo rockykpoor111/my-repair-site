@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     description:
       "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
   },
+  verification: {
+    google: "2XwA-ZqTRKwsDFyFWbNBoHlxQ7NK3nMTPHKEsR-cpxw",
+  },
   robots: {
     index: true,
     follow: true,
