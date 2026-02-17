@@ -17,18 +17,6 @@ export const metadata: Metadata = {
   title: "AppliancesPro - Best Home Appliance Repair in Delhi | Call 8076418358",
   description: "Best home appliance repair service in Delhi NCR. Expert AC repair, washing machine repair, TV repair, Fridge repair & microwave repair. Certified technicians, same-day service, 90-day warranty. Call now!",
   keywords: ["best home appliance repair in Delhi", "appliance repair near me", "AC repair Delhi", "washing machine repair Delhi", "TV repair Delhi", "microwave repair Delhi", "home appliance service Delhi NCR", "fridge repair Delhi", "same day appliance repair", "affordable appliance repair", "AppliancesPro", "appliance repair Noida", "appliance repair Gurgaon", "best AC service Delhi", "emergency appliance repair"],
-  openGraph: {
-    title: "AppliancesPro - Best Home Appliance Repair in Delhi | Call 8076418358",
-    description: "Expert repair for AC, Washing Machine, TV, Microwave, Fridge & more. Same-day service, 90-day warranty, certified technicians in Delhi NCR.",
-    type: "website",
-    locale: "en_IN",
-    siteName: "AppliancesPro",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AppliancesPro - Best Home Appliance Repair in Delhi | Call 8076418358",
-    description: "Expert repair for AC, Washing Machine, TV, Microwave, Fridge & more. Same-day service in Delhi NCR.",
-  },
 };
 
 const homeFaqs = {
