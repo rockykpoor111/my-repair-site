@@ -11,42 +11,47 @@ const _spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Appliances Pro - AC, Fridge, Washing Machine Repair in Delhi NCR | Call 8076418358",
+  title: {
+    default: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR | Call 8076418358",
+    template: "%s | Appliances Pro",
+  },
   description:
-    "Expert repair services for AC, Fridge, Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad. Call 8076418358 now!",
+    "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad. We offer same-day doorstep service, affordable rates, and warranty. Call 8076418358 for instant booking.",
   keywords: [
-    "AC repair",
-    "Fridge repair",
-    "Washing Machine Service",
-    "Delhi",
-    "Noida",
-    "Gurgaon",
-    "Microwave repair",
-    "TV repair",
-    "Appliance repair near me",
+    "AC repair near me",
+    "AC service Noida",
+    "Split AC installation Delhi",
+    "Window AC repair Gurgaon",
+    "Fridge repair mechanic",
+    "Refrigerator gas filling Ghaziabad",
+    "Washing machine repair Faridabad",
+    "Fully automatic washing machine service",
+    "Microwave oven repair near me",
+    "LED TV repair Delhi NCR",
+    "Samsung AC repair",
+    "LG fridge repair",
+    "Whirlpool washing machine service",
+    "Daikin AC service",
+    "IFB microwave repair",
+    "Appliances Pro",
+    "home appliance mechanic",
+    "doorstep repair service",
+    "urgent AC repair",
+    "cheap appliance repair Delhi",
   ],
   openGraph: {
-    title: "Appliances Pro - Repair Services in Delhi NCR | Call 8076418358",
+    title: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR",
     description:
-      "Expert repair for AC, Washing Machine, Fridge & more. Same-day service in Delhi, Noida, Gurgaon.",
-    url: "https://appliancespro.in",
-    siteName: "Appliances Pro",
-    images: [
-      {
-        url: "/og-image.png", // Ensure this image exists in public folder
-        width: 1200,
-        height: 630,
-        alt: "Appliances Pro Repair Services",
-      },
-    ],
-    locale: "en_IN",
+      "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
     type: "website",
+    locale: "en_IN",
+    siteName: "Appliances Pro",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Appliances Pro - Repair Services in Delhi NCR | Call 8076418358",
+    title: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR",
     description:
-      "Expert repair for AC, Washing Machine, Fridge & more. Same-day service in Delhi, Noida, Gurgaon.",
+      "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
   },
   robots: {
     index: true,
