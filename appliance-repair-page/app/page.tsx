@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   keywords: ["best home appliance repair in Delhi", "appliance repair near me", "AC repair Delhi", "washing machine repair Delhi", "TV repair Delhi", "microwave repair Delhi", "home appliance service Delhi NCR", "fridge repair Delhi", "same day appliance repair", "affordable appliance repair", "AppliancesPro", "appliance repair Noida", "appliance repair Gurgaon", "best AC service Delhi", "emergency appliance repair"],
   openGraph: {
     title: "AppliancesPro - Best Home Appliance Repair in Delhi",
-    description: "Expert repair for AC, Washing Machine, TV, Microwave & Fridge more. Same-day service, 90-day warranty, certified technicians in Delhi NCR.",
+    description: "Expert repair for AC, Washing Machine, TV, Microwave, Fridge & more. Same-day service, 90-day warranty, certified technicians in Delhi NCR.",
     type: "website",
     locale: "en_IN",
     siteName: "AppliancesPro",

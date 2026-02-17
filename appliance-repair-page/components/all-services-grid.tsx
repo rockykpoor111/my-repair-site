@@ -16,7 +16,7 @@ const services = [
     description:
       "Split AC, Window AC, Central AC repair, gas refill, installation & deep cleaning.",
     price: "Starting Rs. 399",
-    href: "/",
+    href: "/ac-repair",
     color: "bg-sky-500/10 text-sky-600",
     hoverColor: "group-hover:bg-sky-500 group-hover:text-white",
   },
@@ -56,7 +56,7 @@ const services = [
     description:
       "Compressor repair, gas refill, thermostat fix, door seal replacement.",
     price: "Starting Rs. 499",
-    href: "#contact",
+    href: "/fridge-repair",
     color: "bg-teal-500/10 text-teal-600",
     hoverColor: "group-hover:bg-teal-500 group-hover:text-white",
   },
