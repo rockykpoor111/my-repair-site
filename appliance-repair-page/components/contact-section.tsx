@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useWhatsAppPopup } from "@/components/whatsapp-popup-provider";
 
 const WHATSAPP_NUMBER = "918076418358";
 const PHONE_NUMBER = "+918076418358";
@@ -54,6 +55,7 @@ const defaultData: ContactData = {
 };
 
 export function ContactSection({ data }: { data?: ContactData }) {
+  const { openPopup } = useWhatsAppPopup();
   const d = data ?? defaultData;
   const [formData, setFormData] = useState({
     name: "",
@@ -62,7 +64,6 @@ export function ContactSection({ data }: { data?: ContactData }) {
     applianceType: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -72,6 +73,20 @@ export function ContactSection({ data }: { data?: ContactData }) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    // Fetch API to hit email first in background
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        service: formData.service,
+        issue: formData.message,
+        type: `Contact Form - ${formData.applianceType}`
+      }),
+    }).catch((err) => console.error("Failed to send contact email lead", err));
+
     const whatsappText = encodeURIComponent(
       `*New Service Lead*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service}\n${d.typeLabel}: ${formData.applianceType}\nMessage: ${formData.message || "N/A"}`
     );
@@ -79,8 +94,6 @@ export function ContactSection({ data }: { data?: ContactData }) {
       `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`,
       "_blank"
     );
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
   }
 
   return (
@@ -98,115 +111,98 @@ export function ContactSection({ data }: { data?: ContactData }) {
               {d.subheading}
             </p>
 
-            {submitted ? (
-              <Card className="mt-8 border-primary/30 bg-primary/5">
-                <CardContent className="flex items-center gap-4 p-6">
-                  <CheckCircle className="h-10 w-10 shrink-0 text-primary" />
-                  <div>
-                    <h3 className="font-semibold text-card-foreground">
-                      Request Sent Successfully!
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      Your service request has been sent to our team. We will
-                      contact you within 15 minutes.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ) : (
-              <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="Your full name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+91 XXXXX XXXXX"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="service">Service Required</Label>
-                    <Select
-                      onValueChange={(val) =>
-                        setFormData((prev) => ({ ...prev, service: val }))
-                      }
-                    >
-                      <SelectTrigger id="service">
-                        <SelectValue placeholder="Select service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {d.serviceOptions.map((opt) => (
-                          <SelectItem key={opt.value} value={opt.value}>
-                            {opt.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="applianceType">{d.typeLabel}</Label>
-                    <Select
-                      onValueChange={(val) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          applianceType: val,
-                        }))
-                      }
-                    >
-                      <SelectTrigger id="applianceType">
-                        <SelectValue placeholder={`Select ${d.typeLabel.toLowerCase()}`} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {d.typeOptions.map((opt) => (
-                          <SelectItem key={opt.value} value={opt.value}>
-                            {opt.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
+            <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="message">Describe Your Issue (Optional)</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder={d.messagePlaceholder}
-                    rows={3}
-                    value={formData.message}
+                  <Label htmlFor="name">Full Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                    value={formData.name}
                     onChange={handleChange}
                   />
                 </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+91 XXXXX XXXXX"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-                >
-                  <Send className="h-5 w-5" />
-                  Send via WhatsApp
-                </Button>
-              </form>
-            )}
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="service">Service Required</Label>
+                  <Select
+                    onValueChange={(val) =>
+                      setFormData((prev) => ({ ...prev, service: val }))
+                    }
+                  >
+                    <SelectTrigger id="service">
+                      <SelectValue placeholder="Select service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {d.serviceOptions.map((opt) => (
+                        <SelectItem key={opt.value} value={opt.value}>
+                          {opt.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="applianceType">{d.typeLabel}</Label>
+                  <Select
+                    onValueChange={(val) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        applianceType: val,
+                      }))
+                    }
+                  >
+                    <SelectTrigger id="applianceType">
+                      <SelectValue placeholder={`Select ${d.typeLabel.toLowerCase()}`} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {d.typeOptions.map((opt) => (
+                        <SelectItem key={opt.value} value={opt.value}>
+                          {opt.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="message">Describe Your Issue (Optional)</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder={d.messagePlaceholder}
+                  rows={3}
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                <Send className="h-5 w-5" />
+                Send via WhatsApp
+              </Button>
+            </form>
           </div>
 
           <div className="flex flex-col gap-6 lg:pt-16">
@@ -236,14 +232,12 @@ export function ContactSection({ data }: { data?: ContactData }) {
                 <div>
                   <h3 className="font-semibold text-foreground">WhatsApp Us</h3>
                   <p className="text-sm text-muted-foreground">Quick chat for instant booking</p>
-                  <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20need%20appliance%20repair%20service`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1 inline-block text-lg font-bold text-[#25D366]"
+                  <button
+                    onClick={() => openPopup()}
+                    className="mt-1 inline-block text-lg font-bold text-[#25D366] text-left hover:underline"
                   >
                     Chat Now
-                  </a>
+                  </button>
                 </div>
               </CardContent>
             </Card>

@@ -13,11 +13,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useWhatsAppPopup } from "@/components/whatsapp-popup-provider";
 
 const WHATSAPP_NUMBER = "918076418358";
 const PHONE_NUMBER = "+918076418358";
 
 export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?: string }) {
+  const { openPopup } = useWhatsAppPopup();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -88,15 +90,14 @@ export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?:
                   <Phone className="h-5 w-5" /> Call Now - Free Estimate
                 </Button>
               </a>
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20want%20to%20book%20an%20appliance%20repair%20service`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                onClick={() => openPopup()}
+                size="lg"
+                variant="outline"
+                className="gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold"
               >
-                <Button size="lg" variant="outline" className="gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold">
-                  <Send className="h-5 w-5" /> Book on WhatsApp
-                </Button>
-              </a>
+                <Send className="h-5 w-5" /> Book on WhatsApp
+              </Button>
             </div>
           </div>
 

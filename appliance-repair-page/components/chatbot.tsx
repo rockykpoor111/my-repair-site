@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Bot, Loader2, Phone } from "lucide-react";
+import { useWhatsAppPopup } from "@/components/whatsapp-popup-provider";
 
 export function Chatbot({ defaultService = "General Inquiry" }: { defaultService?: string }) {
+  const { openPopup } = useWhatsAppPopup();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
@@ -145,15 +147,13 @@ export function Chatbot({ defaultService = "General Inquiry" }: { defaultService
   return (
     <>
       {/* Search/WhatsApp Floating Button (Green) - Fixed Position */}
-      <a
-        href="https://wa.me/918076418358?text=Hi%2C%20I%20need%20help%20with%20an%20appliance%20repair"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={() => openPopup(defaultService !== "General Inquiry" ? defaultService : undefined)}
         className="fixed bottom-36 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-[#128C7E]"
         title="Chat on WhatsApp"
       >
         <Phone size={28} />
-      </a>
+      </button>
 
       {/* Chatbot Container */}
       <div className="fixed bottom-20 right-6 z-50 flex flex-col items-end">

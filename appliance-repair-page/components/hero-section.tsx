@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Phone, Shield, Clock, Star, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useWhatsAppPopup } from "@/components/whatsapp-popup-provider";
 
 const PHONE_NUMBER = "+918076418358";
 const WHATSAPP_NUMBER = "918076418358";
@@ -36,6 +37,7 @@ const defaultHero: HeroData = {
 
 // Yahan humne type ko extend kar diya hai
 export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC" | "Fridge" | "Washing" | "TV" | "Microwave" }) {
+  const { openPopup } = useWhatsAppPopup();
   const d = data ?? defaultHero;
 
   const [formData, setFormData] = useState({
@@ -112,16 +114,14 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
                   <Phone className="h-5 w-5" /> Call Now
                 </Button>
               </a>
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(d.whatsappPreText || `Hi, I need ${type || "appliance"} repair service.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 sm:flex-none"
+              <Button
+                onClick={() => openPopup(`${type} Repair`)}
+                size="lg"
+                variant="outline"
+                className="flex-1 sm:flex-none w-full gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold"
               >
-                <Button size="lg" variant="outline" className="w-full gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold">
-                  <Send className="h-5 w-5" /> Book on WhatsApp
-                </Button>
-              </a>
+                <Send className="h-5 w-5" /> Book on WhatsApp
+              </Button>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-primary-foreground/70">
