@@ -128,7 +128,7 @@ const whyUsData = {
     "90-Day Service Warranty",
     "Home Service Available",
   ],
-  image: "/images/tv-service.jpg",
+  image: "/images/tv.jpeg",
   imageAlt: "Professional technician working on TV circuit board",
   stats: [
     { value: "10+", label: "Years Experience", icon: Award },

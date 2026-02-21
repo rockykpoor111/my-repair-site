@@ -127,7 +127,7 @@ const whyUsData = {
     "90-Day Service Warranty",
     "Same Day Service Available",
   ],
-  image: "/images/microwave-service.jpg",
+  image: "/images/microwave.jpeg",
   imageAlt: "Professional technician servicing a microwave oven",
   stats: [
     { value: "10+", label: "Years Experience", icon: Award },

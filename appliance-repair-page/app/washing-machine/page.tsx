@@ -128,7 +128,7 @@ const whyUsData = {
     "90-Day Service Warranty",
     "Same Day Service Available",
   ],
-  image: "/images/washing-machine-service.jpg",
+  image: "/images/washing.jpeg",
   imageAlt: "Professional technician servicing a washing machine drum",
   stats: [
     { value: "10+", label: "Years Experience", icon: Award },
