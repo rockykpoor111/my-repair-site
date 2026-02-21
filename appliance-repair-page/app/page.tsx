@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     title: "Appliances Pro - Repair Services in Delhi NCR | Call 8076418358",
     description: "Expert repair for AC, Washing Machine, TV, Microwave, Fridge & more. Same-day service, 90-day warranty, certified technicians in Delhi NCR.",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const homeFaqs = {

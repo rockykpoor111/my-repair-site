@@ -12,6 +12,7 @@ const _spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://appliancespro.in"),
   title: {
     default: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR | Call 8076418358",
     template: "%s | Appliances Pro",

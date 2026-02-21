@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Appliances Pro",
   },
+  alternates: {
+    canonical: "/washing-machine",
+  },
 };
 
 const jsonLd = {

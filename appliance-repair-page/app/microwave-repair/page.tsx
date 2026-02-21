@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Appliances Pro",
   },
+  alternates: {
+    canonical: "/microwave-repair",
+  },
 };
 
 const jsonLd = {

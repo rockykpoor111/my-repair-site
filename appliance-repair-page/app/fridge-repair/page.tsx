@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Appliances Pro",
   },
+  alternates: {
+    canonical: "/fridge-repair",
+  },
 };
 
 const jsonLd = {
