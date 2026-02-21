@@ -9,6 +9,7 @@ import { ProcessSection } from "@/components/process-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { FaqSection } from "@/components/faq-section";
+import { AllServicesGrid } from "@/components/all-services-grid";
 import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
@@ -226,6 +227,7 @@ export default function WashingMachinePage() {
         <ContactSection data={contactData} />
 
         <FaqSection data={faqData} />
+        <AllServicesGrid />
       </main>
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}

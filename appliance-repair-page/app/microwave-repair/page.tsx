@@ -9,6 +9,7 @@ import { ProcessSection } from "@/components/process-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { FaqSection } from "@/components/faq-section";
+import { AllServicesGrid } from "@/components/all-services-grid";
 import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
@@ -53,7 +54,7 @@ const heroData = {
   titleHighlight: "Service",
   description:
     "Fast, reliable microwave oven repair by certified technicians. Same-day service for all brands — Solo, Grill, and Convection microwaves.",
-  heroImage: "/images/microwave1.jpeg",
+  heroImage: "/images/microwave.jpeg",
   heroImageAlt: "Professional technician repairing a microwave oven",
   whatsappPreText: "Hi, I need microwave oven repair service. Please share details.",
   features: [
@@ -219,6 +220,7 @@ export default function MicrowaveRepairPage() {
         <TestimonialsSection data={testimonialsData} />
         <ContactSection data={contactData} />
         <FaqSection data={faqData} />
+        <AllServicesGrid />
       </main>
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}

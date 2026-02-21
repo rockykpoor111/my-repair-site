@@ -220,6 +220,7 @@ export default function TvRepairPage() {
         <TestimonialsSection data={testimonialsData} />
         <ContactSection data={contactData} />
         <FaqSection data={faqData} />
+        <AllServicesGrid />
       </main>
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}

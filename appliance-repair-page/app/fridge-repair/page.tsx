@@ -6,10 +6,11 @@ import { ProcessSection } from "@/components/process-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { FaqSection } from "@/components/faq-section";
+import { AllServicesGrid } from "@/components/all-services-grid";
 import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
-import { Clock, Shield, Star, Snowflake, Wrench, Thermometer, Droplets, Settings, Zap } from "lucide-react";
+import { Clock, Shield, Star, Snowflake, Wrench, Thermometer, Droplets, Settings, Zap, Award, Users, CheckCircle, PhoneCall, ClipboardCheck, ThumbsUp } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -85,6 +86,50 @@ const fridgeContactData = {
   messagePlaceholder: "Describe your fridge problem here...",
 };
 
+const whyUsData = {
+  heading: "Top Rated Fridge Repair Experts in Delhi",
+  description: "AppliancesPro leads the market in Fridge and Refrigerator repair. Our technicians easily fix cooling, compressor, and gas leak issues.",
+  features: ["Specialized Fridge Techs", "100% Original Spare Parts", "Fixed Prices", "All Fridge Brands", "90-Day Warranty", "Immediate Service"],
+  image: "/images/fridge.png",
+  imageAlt: "Fridge repair service technician",
+  stats: [{ value: "10+", label: "Years Experience", icon: Award }, { value: "4,500+", label: "Customers", icon: Users }, { value: "40 min", label: "Response", icon: Clock }],
+};
+
+const processData = {
+  heading: "4 Steps to Restore Cooling",
+  subheading: "Get your Fridge working flawlessly fast.",
+  steps: [
+    { icon: PhoneCall, step: "01", title: "Reach Out", description: "Contact us via WhatsApp to book a Fridge inspection." },
+    { icon: ClipboardCheck, step: "02", title: "Diagnosis", description: "Our expert visits to check the compressor and thermostat." },
+    { icon: Wrench, step: "03", title: "Immediate Fix", description: "We repair leaks, refill gas, or replace faulty parts." },
+    { icon: ThumbsUp, step: "04", title: "Cooling Tested", description: "We verify the temperature drop and provide a 90-day warranty." },
+  ],
+};
+
+const testimonialsData = {
+  heading: "Trusted by Fridge Owners",
+  subheading: "Read what customers say about our Fridge repair.",
+  reviews: [
+    { name: "Suresh", location: "Delhi", rating: 5, text: "My Double Door Fridge wasn't cooling. They refilled gas and it's perfect!" },
+    { name: "Meena", location: "Gurgaon", rating: 5, text: "Fridge PCB repair done in 45 mins. Very professional." },
+    { name: "Rahul", location: "Noida", rating: 4, text: "Affordable Fridge service and no hidden charges." },
+    { name: "Priya", location: "Faridabad", rating: 5, text: "Compressor replaced quickly with original warranty." },
+    { name: "Amit", location: "Ghaziabad", rating: 5, text: "Same-day service, saved all my food from spoiling." },
+    { name: "Neha", location: "Delhi", rating: 5, text: "Honest diagnosis and reasonable price." },
+  ],
+};
+
+const faqData = {
+  heading: "Fridge Repair Questions",
+  subheading: "Common queries regarding Fridge service.",
+  faqs: [
+    { question: "How long does Fridge gas refilling take?", answer: "Usually 45 to 60 minutes including leak testing." },
+    { question: "Do you repair Side-by-Side Inverter Fridges?", answer: "Yes, our technicians are highly trained in all advanced Fridge models." },
+    { question: "Can a faulty compressor be repaired?", answer: "In most cases, a faulty compressor requires a replacement." },
+    { question: "What is your Fridge repair warranty?", answer: "We give 90 days warranty on standard Fridge repairs and 6 months on spare parts." },
+  ],
+};
+
 export default function FridgeRepairPage() {
   return (
     <>
@@ -100,14 +145,15 @@ export default function FridgeRepairPage() {
         {/* Services ka 6 items wala data yahan ja raha hai */}
         <ServicesSection data={fridgeServices} />
 
-        <WhyUsSection />
-        <ProcessSection />
-        <TestimonialsSection />
+        <WhyUsSection data={whyUsData} />
+        <ProcessSection data={processData} />
+        <TestimonialsSection data={testimonialsData} />
 
         {/* Fridge specific contact data yahan pass kar diya hai */}
         <ContactSection data={fridgeContactData} />
 
-        <FaqSection />
+        <FaqSection data={faqData} />
+        <AllServicesGrid />
       </main>
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}
