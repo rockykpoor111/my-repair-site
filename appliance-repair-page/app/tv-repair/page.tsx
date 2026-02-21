@@ -14,34 +14,38 @@ import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
 
 export const metadata: Metadata = {
-  title: "AppliancesPro - Expert TV Repair Service | LED, LCD, OLED, Smart TV",
+  title: "Appliances Pro - Expert TV Repair Service in Delhi NCR",
   description:
-    "Professional TV repair services for all brands. LED, LCD, OLED, Smart TV repair. Panel fix, backlight repair, motherboard repair. Same-day service. Call now!",
+    "Professional TV repair services for all brands. LED, LCD, OLED, Smart TV repair. Panel fix, backlight repair, motherboard repair. Same-day service in Delhi NCR.",
   keywords: [
-    "TV repair",
-    "TV repair near me",
-    "LED TV repair",
-    "LCD TV repair",
-    "OLED TV repair",
-    "Smart TV repair",
-    "TV panel repair",
+    "TV repair Delhi NCR",
+    "TV repair near me Gurgaon",
+    "LED TV repair Noida",
+    "Smart TV repair Faridabad",
+    "TV panel repair Ghaziabad",
     "TV backlight repair",
     "TV motherboard repair",
-    "TV screen repair",
-    "TV not turning on",
-    "TV no display",
-    "Samsung TV repair",
-    "LG TV repair",
-    "Sony TV repair",
-    "AppliancesPro",
   ],
   openGraph: {
-    title: "AppliancesPro - Expert TV Repair Service",
+    title: "Appliances Pro - Expert TV Repair Service in Delhi NCR",
     description:
-      "Professional TV repair for LED, LCD, OLED & Smart TVs. Same-day service by certified technicians.",
+      "Professional TV repair for LED, LCD, OLED & Smart TVs. Same-day service by certified technicians in Delhi, Noida, Gurgaon, Faridabad, Ghaziabad.",
     type: "website",
-    siteName: "AppliancesPro",
+    siteName: "Appliances Pro",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "TV Repair Service",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Appliances Pro"
+  },
+  areaServed: ["Delhi", "Noida", "Gurgaon", "Faridabad", "Ghaziabad"],
+  description: "Expert TV repair and maintenance service at your doorstep in Delhi NCR.",
+  serviceType: "Television Repair"
 };
 
 const heroData = {
@@ -203,6 +207,10 @@ const faqData = {
 export default function TvRepairPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         <HeroSection data={heroData} type="TV" />

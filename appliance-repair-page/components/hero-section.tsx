@@ -102,7 +102,7 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
               {d.badge}
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
-              {d.title} <span className="text-accent">{d.titleHighlight}</span> at Your Doorstep
+              {d.title} <span className="text-accent">{d.titleHighlight}</span> in Delhi NCR
             </h1>
             <p className="mt-6 max-w-lg text-lg text-primary-foreground/80 leading-relaxed">
               {d.description}

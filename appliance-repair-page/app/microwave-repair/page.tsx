@@ -14,33 +14,37 @@ import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
 
 export const metadata: Metadata = {
-  title: "AppliancesPro - Expert Microwave Repair | Same Day Microwave Service",
+  title: "Appliances Pro - Expert Microwave Repair in Delhi NCR",
   description:
-    "Professional microwave oven repair services for all brands. Magnetron repair, turntable fix, door switch repair. Solo, grill, convection microwave repair. Same-day service!",
+    "Professional microwave oven repair services for all brands. Magnetron repair, turntable fix, door switch repair. Solo, grill, convection microwave repair. Same-day service in Delhi NCR.",
   keywords: [
-    "microwave repair",
-    "microwave repair near me",
-    "microwave oven repair",
-    "microwave not heating",
-    "microwave turntable not working",
-    "microwave door repair",
-    "magnetron repair",
-    "microwave sparking",
+    "microwave repair Delhi NCR",
+    "microwave repair near me Gurgaon",
+    "microwave oven repair Noida",
+    "microwave not heating Faridabad",
+    "magnetron repair Ghaziabad",
     "convection microwave repair",
-    "grill microwave repair",
-    "solo microwave repair",
-    "Samsung microwave repair",
-    "LG microwave repair",
-    "IFB microwave repair",
-    "AppliancesPro",
   ],
   openGraph: {
-    title: "AppliancesPro - Expert Microwave Repair Service",
+    title: "Appliances Pro - Expert Microwave Repair Service in Delhi NCR",
     description:
-      "Professional microwave oven repair for all brands. Same-day service by certified technicians.",
+      "Professional microwave oven repair for all brands. Same-day service by certified technicians in Delhi, Noida, Gurgaon, Faridabad, Ghaziabad.",
     type: "website",
-    siteName: "AppliancesPro",
+    siteName: "Appliances Pro",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Microwave Repair Service",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Appliances Pro"
+  },
+  areaServed: ["Delhi", "Noida", "Gurgaon", "Faridabad", "Ghaziabad"],
+  description: "Expert Microwave repair and maintenance service at your doorstep in Delhi NCR.",
+  serviceType: "Microwave Oven Repair"
 };
 
 const heroData = {
@@ -202,6 +206,10 @@ const faqData = {
 export default function MicrowaveRepairPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         <HeroSection data={heroData} type="Microwave" />

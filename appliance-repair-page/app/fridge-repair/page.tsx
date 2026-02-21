@@ -10,6 +10,33 @@ import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
 import { Clock, Shield, Star, Snowflake, Wrench, Thermometer, Droplets, Settings, Zap } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Appliances Pro - Expert Fridge & Refrigerator Repair in Delhi NCR",
+  description: "Top-rated Fridge and Refrigerator repair services in Delhi, Noida, Gurgaon, Ghaziabad. Single Door, Double Door, Side-by-Side repair. Same-day service.",
+  keywords: ["Fridge repair Delhi NCR", "Refrigerator service Gurgaon", "Fridge gas filling Noida", "Double door fridge repair", "Fridge mechanic near me"],
+  openGraph: {
+    title: "Appliances Pro - Expert Fridge Repair Service in Delhi NCR",
+    description: "Top-rated Fridge and Refrigerator repair services in Delhi, Noida, Gurgaon, Ghaziabad.",
+    type: "website",
+    locale: "en_IN",
+    siteName: "Appliances Pro",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fridge Repair Service",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Appliances Pro"
+  },
+  areaServed: ["Delhi", "Noida", "Gurgaon", "Faridabad", "Ghaziabad"],
+  description: "Expert Refrigerator repair and maintenance service at your doorstep in Delhi NCR.",
+  serviceType: "Refrigerator Repair"
+};
 // 1. Fridge Hero Data
 const fridgeHero = {
   badge: "Trusted by 2,500+ Customers for Fridge Repair",
@@ -61,6 +88,10 @@ const fridgeContactData = {
 export default function FridgeRepairPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         {/* Yellow highlight ke liye title aur titleHighlight alag kar diye hain */}

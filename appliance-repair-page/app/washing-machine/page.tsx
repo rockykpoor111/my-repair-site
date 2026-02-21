@@ -14,32 +14,38 @@ import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
 
 export const metadata: Metadata = {
-  title: "AppliancesPro - Expert Washing Machine Repair | Same Day Service",
+  title: "Appliances Pro - Expert Washing Machine Repair in Delhi NCR",
   description:
-    "Professional washing machine repair services for all brands. Front load, top load, semi-automatic repair. Drum repair, motor fix, water leakage solutions. Same-day service. Call now!",
+    "Professional washing machine repair services for all brands. Front load, top load, semi-automatic repair. Drum repair, motor fix, water leakage solutions. Same-day service in Delhi NCR.",
   keywords: [
-    "washing machine repair",
-    "washing machine service",
-    "washing machine repair near me",
-    "front load washing machine repair",
-    "top load washing machine repair",
+    "washing machine repair Delhi NCR",
+    "washing machine service Noida",
+    "washing machine repair near me Gurgaon",
+    "front load washing machine repair Faridabad",
+    "top load washing machine repair Ghaziabad",
     "drum repair",
     "washing machine motor repair",
-    "washing machine not spinning",
-    "washing machine water leakage",
-    "washing machine noise problem",
-    "semi automatic washing machine repair",
-    "Samsung washing machine repair",
-    "LG washing machine repair",
-    "AppliancesPro",
   ],
   openGraph: {
-    title: "AppliancesPro - Expert Washing Machine Repair Service",
+    title: "Appliances Pro - Expert Washing Machine Repair Service in Delhi NCR",
     description:
-      "Professional washing machine repair for all brands. Same-day service by certified technicians.",
+      "Professional washing machine repair for all brands. Same-day service by certified technicians in Delhi, Noida, Gurgaon, Faridabad, Ghaziabad.",
     type: "website",
-    siteName: "AppliancesPro",
+    siteName: "Appliances Pro",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Washing Machine Repair Service",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Appliances Pro"
+  },
+  areaServed: ["Delhi", "Noida", "Gurgaon", "Faridabad", "Ghaziabad"],
+  description: "Expert Washing Machine repair and maintenance service at your doorstep in Delhi NCR.",
+  serviceType: "Washing Machine Repair"
 };
 
 const heroData = {
@@ -201,6 +207,10 @@ const faqData = {
 export default function WashingMachinePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         {/* Yahan 'type' add kar diya hai taaki AC ka form na dikhe */}
