@@ -20,9 +20,9 @@ const fridgeHero = {
   heroImageAlt: "Fridge Repair Service",
   whatsappPreText: "Hi, I need Fridge repair service.",
   features: [
-    { icon: "Clock", label: "90 Min Response" },
+    { icon: "Clock", label: "Same Day Service" },
     { icon: "Shield", label: "90-Day Warranty" },
-    { icon: "Star", label: "Certified Experts" },
+    { icon: "Star", label: "Certified Technicians" },
   ],
 };
 

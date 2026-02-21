@@ -99,6 +99,21 @@ export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?:
                 <Send className="h-5 w-5" /> Book on WhatsApp
               </Button>
             </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-primary-foreground/70">
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-accent" />
+                <span>Same Day Service</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-accent" />
+                <span>90-Day Warranty</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="h-5 w-5 text-accent" />
+                <span>Certified Technicians</span>
+              </div>
+            </div>
           </div>
 
           {/* RIGHT SIDE - FORM (LAYOUT AS PER IMAGE 1) */}

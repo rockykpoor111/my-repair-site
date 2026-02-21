@@ -109,28 +109,31 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={`tel:${PHONE_NUMBER}`} className="flex-1 sm:flex-none">
-                <Button size="lg" className="w-full gap-2 bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-lg">
-                  <Phone className="h-5 w-5" /> Call Now
+              <a href={`tel:${PHONE_NUMBER}`}>
+                <Button size="lg" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold shadow-lg">
+                  <Phone className="h-5 w-5" /> Call Now - Free Estimate
                 </Button>
               </a>
               <Button
                 onClick={() => openPopup(`${type} Repair`)}
                 size="lg"
                 variant="outline"
-                className="flex-1 sm:flex-none w-full gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold"
+                className="gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold"
               >
                 <Send className="h-5 w-5" /> Book on WhatsApp
               </Button>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-primary-foreground/70">
-              {d.features.map((f) => (
-                <div key={f.label} className="flex items-center gap-2">
-                  <f.icon className="h-5 w-5 text-accent" />
-                  <span>{f.label}</span>
-                </div>
-              ))}
+              {d.features.map((f) => {
+                const IconComponent = { Clock, Shield, Star }[f.icon as string] || Star;
+                return (
+                  <div key={f.label} className="flex items-center gap-2">
+                    <IconComponent className="h-5 w-5 text-accent" />
+                    <span>{f.label}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
