@@ -117,16 +117,16 @@ const servicesData = {
 };
 
 const whyUsData = {
-  heading: "Trusted Washing Machine Repair Experts",
+  heading: "Top Washing Machine Mechanics in NCR",
   description:
-    "AppliancesPro is a leading washing machine repair service provider. Our skilled technicians handle all brands and models with genuine parts and modern diagnostic tools.",
+    "A broken washer disrupts daily life. We bring factory-grade training straight to your laundry room. Our rapid response teams are equipped to handle complex front-load PCB issues and standard top-load motor faults.",
   features: [
-    "Certified & Background-Verified Technicians",
-    "Genuine Spare Parts with Warranty",
-    "Transparent Pricing - No Hidden Charges",
-    "All Major Brands Covered",
-    "90-Day Service Warranty",
-    "Same Day Service Available",
+    "Factory-Trained Laundry Specialists",
+    "Company Approved Motor/Drum Replacements",
+    "Crystal Clear Estimates No Gimmicks",
+    "Whirlpool, IFB, Bosch & All Brands",
+    "3-Month Component Protection",
+    "Express Same-Day Scheduling",
   ],
   image: "/images/washing.jpeg",
   imageAlt: "Professional technician servicing a washing machine drum",
@@ -139,14 +139,14 @@ const whyUsData = {
 };
 
 const processData = {
-  heading: "Simple 4-Step Process",
+  heading: "Smooth Laundry Restoration Stages",
   subheading:
-    "Getting your washing machine repaired has never been easier. Follow these simple steps and we handle the rest.",
+    "Resolving spin and drainage issues without removing your machine.",
   steps: [
-    { icon: PhoneCall, step: "01", title: "Book a Service", description: "Call us, WhatsApp, or fill the form to book your washing machine service." },
-    { icon: ClipboardCheck, step: "02", title: "Free Diagnosis", description: "Our certified technician visits your home and diagnoses the issue for free." },
-    { icon: Wrench, step: "03", title: "Expert Repair", description: "We fix the problem using genuine parts and industry-standard tools." },
-    { icon: ThumbsUp, step: "04", title: "Quality Assured", description: "Post-service quality check with 90-day warranty on all repairs." },
+    { icon: PhoneCall, step: "01", title: "Contact Dispatch", description: "Send a quick WhatsApp text specifying your washer type (e.g., Front Load)." },
+    { icon: ClipboardCheck, step: "02", title: "At-Home Troubleshooting", description: "Our mechanic inspects the water inlet, drum bearings, and motherboard." },
+    { icon: Wrench, step: "03", title: "Immediate Remedy", description: "We clear blockages, fit new drive belts, or repair the electronic panel." },
+    { icon: ThumbsUp, step: "04", title: "Spin Cycle Validation", description: "We run a test wash cycle to guarantee zero leaks and perfect spinning." },
   ],
 };
 

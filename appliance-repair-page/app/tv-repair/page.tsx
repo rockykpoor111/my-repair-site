@@ -117,16 +117,16 @@ const servicesData = {
 };
 
 const whyUsData = {
-  heading: "Trusted TV Repair Experts",
+  heading: "Why We Are Delhi's Best For Televisions",
   description:
-    "AppliancesPro is a leading TV repair service provider. Our technicians are trained in chip-level repair for LED, LCD, OLED, and Smart TVs of all major brands.",
+    "We specialize exclusively in delicate panel work and advanced motherboard troubleshooting. Don't risk your expensive smart TV with unauthorized local shops; our specialized engineers know display tech inside out.",
   features: [
-    "Chip-Level Repair Experts",
-    "Genuine Spare Parts with Warranty",
-    "Transparent Pricing - No Hidden Charges",
-    "All Major TV Brands Covered",
-    "90-Day Service Warranty",
-    "Home Service Available",
+    "Authorized-Level LCD/LED Diagnostics",
+    "100% Authentic OEM TV Panels",
+    "Upfront Quotes - No Surprises",
+    "Sony, LG, Samsung & More Supported",
+    "90-Day Guarantee on Display Fixes",
+    "Technician Visit to Your Living Room",
   ],
   image: "/images/tv.jpeg",
   imageAlt: "Professional technician working on TV circuit board",
@@ -139,14 +139,14 @@ const whyUsData = {
 };
 
 const processData = {
-  heading: "Simple 4-Step Process",
+  heading: "How Our TV Diagnostics Work",
   subheading:
-    "Getting your TV repaired has never been easier. Follow these simple steps and we handle the rest.",
+    "Restore your entertainment in a few fast, hassle-free stages.",
   steps: [
-    { icon: PhoneCall, step: "01", title: "Book a Service", description: "Call us, WhatsApp, or fill the form to book your TV repair service." },
-    { icon: ClipboardCheck, step: "02", title: "Free Diagnosis", description: "Our certified technician visits your home and diagnoses the TV issue for free." },
-    { icon: Wrench, step: "03", title: "Expert Repair", description: "We fix the problem using genuine parts and chip-level repair tools." },
-    { icon: ThumbsUp, step: "04", title: "Quality Assured", description: "Post-repair quality check with 90-day warranty on all repairs." },
+    { icon: PhoneCall, step: "01", title: "Schedule Visit", description: "Ping us on WhatsApp with your TV brand and screen size." },
+    { icon: ClipboardCheck, step: "02", title: "Visual Inspection", description: "Our display expert checks the backlight inverter and panel health at your house." },
+    { icon: Wrench, step: "03", title: "Component Fix", description: "We solder loose chips, replace dead pixels, or swap the power board." },
+    { icon: ThumbsUp, step: "04", title: "Viewing Test", description: "We run a 4K video test to ensure colors are vibrant before wrapping up." },
   ],
 };
 

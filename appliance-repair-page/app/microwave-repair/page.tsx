@@ -116,16 +116,16 @@ const servicesData = {
 };
 
 const whyUsData = {
-  heading: "Trusted Microwave Repair Experts",
+  heading: "Premium Oven Repair Specialists",
   description:
-    "AppliancesPro is a leading microwave oven repair service provider. Our technicians handle all types — Solo, Grill, and Convection microwaves with genuine parts.",
+    "A faulty microwave can disrupt meal prep drastically. Our dedicated kitchen appliance engineers possess deep expertise in diagnosing magnetron failures and replacing high-voltage capacitors safely in Solo, Grill, and Convection models.",
   features: [
-    "Certified & Background-Verified Technicians",
-    "Genuine Spare Parts with Warranty",
-    "Transparent Pricing - No Hidden Charges",
-    "All Major Brands Covered",
-    "90-Day Service Warranty",
-    "Same Day Service Available",
+    "Dedicated Kitchen Tech Units",
+    "100% Safe High-Voltage Handling",
+    "Flat Repair Fees With ZERO Hidden Costs",
+    "Supporting Panasonic, Samsung & IFB",
+    "Comprehensive 3-Month Fix Warranty",
+    "On-Site Kitchen Diagnostics",
   ],
   image: "/images/microwave.jpeg",
   imageAlt: "Professional technician servicing a microwave oven",
@@ -138,14 +138,14 @@ const whyUsData = {
 };
 
 const processData = {
-  heading: "Simple 4-Step Process",
+  heading: "Streamlined Heating Restoration",
   subheading:
-    "Getting your microwave repaired has never been easier. Follow these simple steps and we handle the rest.",
+    "Bringing warmth back to your meals with zero headaches.",
   steps: [
-    { icon: PhoneCall, step: "01", title: "Book a Service", description: "Call us, WhatsApp, or fill the form to book your microwave repair appointment." },
-    { icon: ClipboardCheck, step: "02", title: "Free Diagnosis", description: "Our certified technician visits your home and diagnoses the microwave issue for free." },
-    { icon: Wrench, step: "03", title: "Expert Repair", description: "We fix the problem using genuine parts and proper safety equipment." },
-    { icon: ThumbsUp, step: "04", title: "Quality Assured", description: "Post-repair quality check with 90-day warranty on all repairs." },
+    { icon: PhoneCall, step: "01", title: "Submit Request", description: "Drop a chat detailing your oven's issue (e.g., Sparking inside)." },
+    { icon: ClipboardCheck, step: "02", title: "Safety Audit", description: "An expert evaluates radiation leaks, door switches, and the central magnetron." },
+    { icon: Wrench, step: "03", title: "Direct Solution", description: "We swap blown fuses, replace the turntable motor, or rebuild the circuit board." },
+    { icon: ThumbsUp, step: "04", title: "Power Check", description: "A final water-heating test confirms the radiation output is perfectly optimized." },
   ],
 };
 
