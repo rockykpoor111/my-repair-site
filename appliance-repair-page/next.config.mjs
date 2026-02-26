@@ -3,8 +3,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Enable Next.js automatic image optimization for WebP output and resizing
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
   },
   async headers() {
     return [

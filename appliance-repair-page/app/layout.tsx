@@ -85,6 +85,8 @@ const localBusinessSchema = {
   description:
     "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi NCR.",
   telephone: "8076418358",
+  url: "https://appliancespro.in",
+  image: "https://appliancespro.in/images/home-bg.png",
   areaServed: [
     "Delhi",
     "New Delhi",

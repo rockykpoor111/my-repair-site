@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/ac-repair", label: "AC Repair" },
   { href: "/microwave-repair", label: "Microwave" },
   { href: "/fridge-repair", label: "Fridge Repair" },
+  { href: "/brands", label: "Brands" },
   { href: "tel:+918076418358", label: "Call Now" },
   { href: "#faq", label: "FAQ" },
 ];
