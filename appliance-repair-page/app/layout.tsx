@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Appliances Pro",
   },
   description:
-    "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad. We offer same-day doorstep service, affordable rates, and warranty. Call 8076418358 for instant booking.",
+    "Expert AC, Fridge, Washing Machine repair in Delhi NCR. Same-day service by certified technicians. Call 8076418358. 90-day warranty. Book now & get 10% off!",
   keywords: [
     "AC repair near me",
     "AC service Noida",
@@ -42,18 +42,19 @@ export const metadata: Metadata = {
     "cheap appliance repair Delhi",
   ],
   openGraph: {
-    title: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR",
-    description:
-      "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
+    title: "Appliances Pro - Expert Repair Services in Delhi NCR",
+    description: "Expert AC, Fridge, Washing Machine repair in Delhi NCR. Same-day service by certified technicians. Call 8076418358. 90-day warranty. Book now & get 10% off!",
     type: "website",
     locale: "en_IN",
     siteName: "Appliances Pro",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Appliances Pro - AC, Fridge, Washing Machine, Microwave, TV Repair in Delhi NCR",
-    description:
-      "Expert repair services for Air Conditioners (AC), Refrigerators (Fridge), Washing Machines, Microwaves, and LED TVs in Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.",
+    title: "Appliances Pro - Expert Repair Services in Delhi NCR",
+    description: "Expert AC, Fridge, Washing Machine repair in Delhi NCR. Same-day service by certified technicians. Call 8076418358. 90-day warranty. Book now & get 10% off!",
+  },
+  alternates: {
+    canonical: "https://appliancespro.in",
   },
   verification: {
     google: "2XwA-ZqTRKwsDFyFWbNBoHlxQ7NK3nMTPHKEsR-cpxw",

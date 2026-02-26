@@ -79,7 +79,7 @@ export function HomeHeroSection({ bgImage = "/images/hero-ac.jpg" }: { bgImage?:
               {"#1 Rated Appliance Repair in Delhi NCR"}
             </div>
             <h1 className="text-balance text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
-              Expert Home Appliance Repair Services in Delhi NCR
+              Best Appliance Repair Services in Delhi NCR
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
               AC, Fridge, Washing Machine, TV, Microwave — get expert repair for all your home appliances. Certified technicians, same-day service, and transparent pricing in Delhi, Noida, Gurgaon, Ghaziabad & all major cities.
