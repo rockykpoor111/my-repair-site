@@ -89,7 +89,7 @@ export default function Page() {
         <FaqSection data={homeFaqs} />
       </main>
       <Footer />
-      {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}
+      {/* <FloatingButtons /> */}
       <StickyContactBar />
       <Chatbot defaultService="Home Appliance Repair" />
     </>

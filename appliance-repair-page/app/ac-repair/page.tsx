@@ -10,6 +10,7 @@ import { AllServicesGrid } from "@/components/all-services-grid";
 import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
+import { StickyContactBar } from "@/components/sticky-contact-bar";
 import { Clock, Shield, Star, Wrench, Settings, Droplets, Zap, AlertTriangle, RotateCcw, Award, Users, CheckCircle, PhoneCall, ClipboardCheck, ThumbsUp } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -115,6 +116,7 @@ export default function Page() {
       </main>
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}
+      <StickyContactBar />
       <Chatbot defaultService="AC Repair" />
     </>
   );

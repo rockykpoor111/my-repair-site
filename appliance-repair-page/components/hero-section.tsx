@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Phone, Shield, Clock, Star, Send } from "lucide-react";
+import { Phone, Shield, Clock, Star, Send, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useWhatsAppPopup } from "@/components/whatsapp-popup-provider";
 
@@ -97,31 +97,29 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
 
           {/* LEFT: Content */}
           <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-foreground">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-foreground animate-in fade-in slide-in-from-bottom-4 duration-700">
               <Star className="h-4 w-4 fill-accent text-accent" />
               {d.badge}
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150 fill-mode-both">
               {d.title} <span className="text-accent">{d.titleHighlight}</span> in Delhi NCR
             </h1>
-            <p className="mt-6 max-w-lg text-lg text-primary-foreground/80 leading-relaxed">
+            <p className="mt-6 max-w-lg text-lg text-primary-foreground/80 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
               {d.description}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href={`tel:${PHONE_NUMBER}`}>
-                <Button size="lg" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold shadow-lg">
+            <div className="mt-8 flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-500 fill-mode-both">
+              <Button size="lg" asChild className="h-14 gap-2 bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-[0_0_15px_rgba(251,146,60,0.5)] transition-all hover:scale-105 animate-[pulse_2s_ease-in-out_infinite]">
+                <a href={`tel:${PHONE_NUMBER}`}>
                   <Phone className="h-5 w-5" /> Call Now - Free Estimate
-                </Button>
-              </a>
-              <Button
-                onClick={() => openPopup(`${type} Repair`)}
-                size="lg"
-                variant="outline"
-                className="gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 text-base font-semibold"
-              >
-                <Send className="h-5 w-5" /> Book on WhatsApp
+                </a>
               </Button>
+              <button
+                onClick={() => document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex h-14 min-w-[240px] items-center justify-center gap-2 rounded-md bg-white px-8 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
+              >
+                <ClipboardList className="h-5 w-5 text-slate-700" /> Quick Booking Form
+              </button>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-primary-foreground/70">
@@ -138,7 +136,7 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
           </div>
 
           {/* RIGHT: Dynamic Form */}
-          <div className="relative rounded-2xl bg-white p-6 shadow-2xl lg:p-8">
+          <div className="relative rounded-2xl bg-white p-6 shadow-2xl lg:p-8 animate-in fade-in zoom-in duration-700 delay-700 fill-mode-both" id="booking-form">
             <h3 className="mb-4 text-2xl font-bold text-gray-900">Book {type} Service</h3>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <input

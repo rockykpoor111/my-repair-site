@@ -13,6 +13,7 @@ import { AllServicesGrid } from "@/components/all-services-grid";
 import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { Chatbot } from "@/components/chatbot";
+import { StickyContactBar } from "@/components/sticky-contact-bar";
 
 export const metadata: Metadata = {
   title: "Appliances Pro - Expert Microwave Repair in Delhi NCR",
@@ -227,6 +228,7 @@ export default function MicrowaveRepairPage() {
       </main>
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}
+      <StickyContactBar />
       <Chatbot defaultService="Microwave Repair" />
     </>
   );

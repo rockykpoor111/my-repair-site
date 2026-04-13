@@ -149,14 +149,14 @@ export function Chatbot({ defaultService = "General Inquiry" }: { defaultService
       {/* Search/WhatsApp Floating Button (Green) - Fixed Position */}
       <button
         onClick={() => openPopup(defaultService !== "General Inquiry" ? defaultService : undefined)}
-        className="fixed bottom-36 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-[#128C7E]"
+        className="fixed bottom-40 md:bottom-36 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform hover:bg-[#128C7E]"
         title="Chat on WhatsApp"
       >
         <Phone size={28} />
       </button>
 
       {/* Chatbot Container */}
-      <div className="fixed bottom-20 right-6 z-50 flex flex-col items-end">
+      <div className="fixed bottom-24 md:bottom-20 right-6 z-50 flex flex-col items-end">
         {!isOpen ? (
           <button onClick={toggleOpen} className="h-14 w-14 rounded-full bg-blue-600 text-white shadow-lg flex items-center justify-center relative hover:scale-110 transition-transform">
             <MessageCircle size={28} />
