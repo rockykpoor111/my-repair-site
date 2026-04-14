@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/ac-repair", label: "AC Repair" },
   { href: "/microwave-repair", label: "Microwave" },
   { href: "/fridge-repair", label: "Fridge Repair" },
+  { href: "/locations", label: "Locations" },
   { href: "/brands", label: "Brands" },
   { href: "#faq", label: "FAQ" },
 ];

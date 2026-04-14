@@ -21,9 +21,9 @@ export interface HeroData {
 }
 
 const defaultHero: HeroData = {
-  badge: "Rated 4.8/5 by 2,500+ Happy Customers",
+  badge: "Rated 4.8/5 by 15,000+ Happy Customers",
   title: "Expert AC Repair &",
-  titleHighlight: "Service",
+  titleHighlight: "Service in Delhi NCR",
   description: "Fast, reliable, and affordable AC repair by certified technicians. Same-day service for all brands.",
   heroImage: "/images/ac.jpeg",
   heroImageAlt: "Professional AC repair technician",
@@ -38,7 +38,7 @@ const defaultHero: HeroData = {
 // Yahan humne type ko extend kar diya hai
 export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC" | "Fridge" | "Washing" | "TV" | "Microwave" }) {
   const { openPopup } = useWhatsAppPopup();
-  const d = data ?? defaultHero;
+  const d = { ...defaultHero, ...(data || {}) };
 
   const [formData, setFormData] = useState({
     name: "",
@@ -102,7 +102,7 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
               {d.badge}
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150 fill-mode-both">
-              {d.title} <span className="text-accent">{d.titleHighlight}</span> in Delhi NCR
+              {d.title} <span className="text-accent">{d.titleHighlight}</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-primary-foreground/80 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
               {d.description}

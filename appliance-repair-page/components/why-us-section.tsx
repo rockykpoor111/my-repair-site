@@ -27,7 +27,7 @@ const defaultData: WhyUsData = {
   imageAlt: "Professional AC technician performing maintenance service",
   stats: [
     { value: "10+", label: "Years Experience", icon: Award },
-    { value: "2,500+", label: "Happy Customers", icon: Users },
+    { value: "15,000+", label: "Happy Customers", icon: Users },
     { value: "50+", label: "Expert Technicians", icon: CheckCircle },
     { value: "30 min", label: "Avg. Response Time", icon: Clock },
   ],

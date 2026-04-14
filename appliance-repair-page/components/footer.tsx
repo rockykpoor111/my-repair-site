@@ -24,8 +24,8 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="/service-areas" className="hover:text-white transition-colors">
-                  Service Areas
+                <Link href="/locations" className="hover:text-white transition-colors">
+                  Service Locations
                 </Link>
               </li>
               <li>

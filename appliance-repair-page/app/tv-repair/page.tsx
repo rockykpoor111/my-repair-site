@@ -54,7 +54,7 @@ const jsonLd = {
 };
 
 const heroData = {
-  badge: "Trusted by 1,800+ Customers for TV Repair",
+  badge: "Trusted by 15,000+ Customers for TV Repair",
   title: "Expert TV Repair &",
   titleHighlight: "Panel Fix",
   description:
@@ -136,7 +136,7 @@ const whyUsData = {
   imageAlt: "Professional technician working on TV circuit board",
   stats: [
     { value: "10+", label: "Years Experience", icon: Award },
-    { value: "1,800+", label: "Happy Customers", icon: Users },
+    { value: "15,000+", label: "Happy Customers", icon: Users },
     { value: "40+", label: "Expert Technicians", icon: CheckCircle },
     { value: "45 min", label: "Avg. Response Time", icon: Clock },
   ],
@@ -157,7 +157,7 @@ const processData = {
 const testimonialsData = {
   heading: "What Our Customers Say",
   subheading:
-    "Join 1,800+ satisfied customers who trust AppliancesPro for their TV repair needs.",
+    "Join 15,000+ satisfied customers who trust AppliancesPro for their TV repair needs.",
   reviews: [
     { name: "Arun Kapoor", location: "Delhi", rating: 5, text: "My 55-inch Samsung LED had backlight issues. The technician fixed it at home in 2 hours. Saved me from buying a new TV!" },
     { name: "Deepa Nair", location: "Mumbai", rating: 5, text: "Smart TV was not connecting to WiFi and apps were crashing. They did a firmware update and it works perfectly now." },
