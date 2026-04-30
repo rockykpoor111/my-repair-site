@@ -12,8 +12,8 @@ import { FaqSection } from "@/components/faq-section";
 import { AllServicesGrid } from "@/components/all-services-grid";
 import Footer from "@/components/footer";
 import { FloatingButtons } from "@/components/floating-buttons";
-import { Chatbot } from "@/components/chatbot";
 import { StickyContactBar } from "@/components/sticky-contact-bar";
+import { LazyChatbot } from "@/components/lazy-chatbot";
 
 export const metadata: Metadata = {
   title: "Appliances Pro - Expert TV Repair Service in Delhi NCR",
@@ -55,10 +55,10 @@ const jsonLd = {
 
 const heroData = {
   badge: "Trusted by 15,000+ Customers for TV Repair",
-  title: "Expert TV Repair &",
-  titleHighlight: "Panel Fix",
+  title: "Expert Doorstep TV",
+  titleHighlight: "Repair in Delhi NCR",
   description:
-    "Fast, reliable TV repair by certified technicians. Same-day service for all brands — LED, LCD, OLED, and Smart TVs.",
+    "Expert TV Repair for all major brands (LED, LCD, OLED & Smart TVs). We provide 90-Minute Doorstep Service across Delhi NCR with Certified Mechanics and a full 90-Day Warranty.",
   heroImage: "/images/tv.jpeg",
   heroImageAlt: "Professional technician repairing a flat screen TV",
   whatsappPreText: "Hi, I need TV repair service. Please share details.",
@@ -230,7 +230,7 @@ export default function TvRepairPage() {
       <Footer />
       {/* <FloatingButtons /> Removed to avoid overlap with Chatbot */}
       <StickyContactBar />
-      <Chatbot defaultService="TV Repair" />
+      <LazyChatbot defaultService="TV Repair" />
     </>
   );
 }

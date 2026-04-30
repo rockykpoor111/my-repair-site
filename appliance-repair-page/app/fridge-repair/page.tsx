@@ -45,8 +45,8 @@ const jsonLd = {
 // 1. Fridge Hero Data
 const fridgeHero = {
   badge: "Trusted by 2,500+ Customers for Fridge Repair",
-  title: "Expert Fridge Repair &", // Sirf itna rakhein
-  titleHighlight: "Service",      // Ye yellow ho jayega
+  title: "Expert Doorstep Fridge",
+  titleHighlight: "Repair in Delhi NCR",
   description: "Fast, reliable refrigerator repair by certified experts. Same-day service for all brands—Single Door,Dubble Door,Side By Side.",
   heroImage: "/images/fridge.png",
   heroImageAlt: "Fridge Repair Service",

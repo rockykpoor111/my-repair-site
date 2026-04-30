@@ -4,7 +4,7 @@ import { locationsList, servicesList, getSeoMetadata, getDynamicContent } from "
 import { Header } from "@/components/header";
 import Footer from "@/components/footer";
 import { StickyContactBar } from "@/components/sticky-contact-bar";
-import { Chatbot } from "@/components/chatbot";
+import { LazyChatbot } from "@/components/lazy-chatbot";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { ContactSection } from "@/components/contact-section";
@@ -59,9 +59,9 @@ export default async function DynamicLocationServicePage({ params }: { params: P
 
     const heroData = {
         badge: `#1 Rated ${srv.type} Repair in ${loc.name}`,
-        title: `Expert ${srv.type} Repair`,
-        titleHighlight: `in ${loc.name}`,
-        description: dynamicDesc,
+        title: `Expert Doorstep ${srv.type}`,
+        titleHighlight: `Repair in ${loc.name}`,
+        description: `Expert ${srv.type} Repair for all major brands. We provide 90-Minute Doorstep Service across ${loc.name} with Certified Mechanics and a full 90-Day Warranty. ` + dynamicDesc,
         heroImage: imageMap[srv.id] || "/images/ac.jpeg",
         heroImageAlt: `${srv.type} repair in ${loc.name}`,
         whatsappPreText: `Hi, I need ${srv.type} repair service in ${loc.name}.`
@@ -225,7 +225,7 @@ export default async function DynamicLocationServicePage({ params }: { params: P
             </main>
             <Footer />
             <StickyContactBar />
-            <Chatbot defaultService={`${srv.type} Repair`} />
+            <LazyChatbot defaultService={`${srv.type} Repair`} />
         </>
     );
 }

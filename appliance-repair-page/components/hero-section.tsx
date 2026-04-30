@@ -22,8 +22,8 @@ export interface HeroData {
 
 const defaultHero: HeroData = {
   badge: "Rated 4.8/5 by 15,000+ Happy Customers",
-  title: "Expert AC Repair &",
-  titleHighlight: "Service in Delhi NCR",
+  title: "Expert Doorstep AC",
+  titleHighlight: "Repair in Delhi NCR",
   description: "Fast, reliable, and affordable AC repair by certified technicians. Same-day service for all brands.",
   heroImage: "/images/ac.jpeg",
   heroImageAlt: "Professional AC repair technician",
@@ -157,6 +157,7 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
               />
 
               <select
+                aria-label="Select City"
                 className="w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:ring-2 focus:ring-accent outline-none"
                 required
                 value={formData.city}
@@ -175,6 +176,7 @@ export function HeroSection({ data, type = "AC" }: { data?: HeroData, type?: "AC
               </select>
 
               <select
+                aria-label="Select Issue"
                 className="w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:ring-2 focus:ring-accent outline-none"
                 required
                 value={formData.issue}

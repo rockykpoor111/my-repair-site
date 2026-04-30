@@ -146,7 +146,7 @@ export function ContactSection({ data }: { data?: ContactData }) {
                       setFormData((prev) => ({ ...prev, service: val }))
                     }
                   >
-                    <SelectTrigger id="service">
+                    <SelectTrigger id="service" aria-label="Select Service">
                       <SelectValue placeholder="Select service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -168,7 +168,7 @@ export function ContactSection({ data }: { data?: ContactData }) {
                       }))
                     }
                   >
-                    <SelectTrigger id="applianceType">
+                    <SelectTrigger id="applianceType" aria-label="Select Appliance Type">
                       <SelectValue placeholder={`Select ${d.typeLabel.toLowerCase()}`} />
                     </SelectTrigger>
                     <SelectContent>

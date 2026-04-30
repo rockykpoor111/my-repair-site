@@ -54,8 +54,8 @@ const jsonLd = {
 
 const heroData = {
   badge: "Trusted by 1,500+ Customers for Microwave Repair",
-  title: "Expert Microwave Repair &",
-  titleHighlight: "Service",
+  title: "Expert Doorstep Microwave",
+  titleHighlight: "Repair in Delhi NCR",
   description:
     "Fast, reliable microwave oven repair by certified technicians. Same-day service for all brands — Solo, Grill, and Convection microwaves.",
   heroImage: "/images/microwave.jpeg",

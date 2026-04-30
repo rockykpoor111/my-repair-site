@@ -55,8 +55,8 @@ const jsonLd = {
 
 const heroData = {
   badge: "Trusted by 2,000+ Customers for Washing Machine Repair",
-  title: "Expert Washing Machine Repair &",
-  titleHighlight: "Service",
+  title: "Expert Doorstep Washing Machine",
+  titleHighlight: "Repair in Delhi NCR",
   description:
     "Fast, reliable washing machine repair by certified technicians. Same-day service for all brands — Front Load, Top Load, and Semi-Automatic machines.",
   heroImage: "/images/washing.jpeg",
